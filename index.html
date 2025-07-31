@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>สุขสันต์วันครบรอบ 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background-color: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background 1s ease;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .heart {
+      font-size: 60px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .heart.clicked {
+      transform: scale(1.8);
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #c2185b;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .message.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>คลิกหัวใจเพื่อดูข้อความลับ 💘</h1>
+  <div class="heart" id="heart">❤️</div>
+  <div class="message" id="message">สุขสันต์วันครบรอบนะธันวาพร 💖 รักเธอที่สุดในโลกเลย 💕</div>
+
+  <audio id="bgmusic" preload="auto">
+    <source src="https://dl.sndup.net/3nhx/QLER-GEEB.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const heart = document.getElementById('heart');
+    const message = document.getElementById('message');
+    const music = document.getElementById('bgmusic');
+
+    heart.addEventListener('click', () => {
+      heart.classList.add('clicked');
+      message.classList.add('show');
+      document.body.style.backgroundColor = '#ffe4ec';
+      music.play();
+    });
+  </script>
+</body>
+</html>
